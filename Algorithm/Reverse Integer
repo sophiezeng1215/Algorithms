@@ -1,0 +1,16 @@
+# O(n), space O(k)
+
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        sign = cmp(x,0)
+        s = str(x)
+        if s[0] == '-':
+            s = s[1:]
+        if int(s[::-1]) > 2**31:
+            return 0
+        else:
+            return sign * int(s[::-1])
