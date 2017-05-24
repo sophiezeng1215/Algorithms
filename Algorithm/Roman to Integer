@@ -1,4 +1,4 @@
-# O(n), space O(k)
+# O(1), space O(1)
 class Solution(object):
     def romanToInt(self, s):
         """
