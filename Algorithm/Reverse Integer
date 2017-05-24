@@ -1,4 +1,4 @@
-# O(n), space O(k)
+# O(n), space O(n)
 
 class Solution(object):
     def reverse(self, x):
