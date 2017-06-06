@@ -1,4 +1,5 @@
 #Time O(n), space O(n)
+#append node.val, use a stack to store node.right(only), and then move node to the left, and 
 
 # Definition for a binary tree node.
 # class TreeNode(object):
