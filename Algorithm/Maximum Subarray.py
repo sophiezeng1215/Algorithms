@@ -13,3 +13,17 @@ class Solution(object):
             local_max = max(nums[i], local_max + nums[i])
             global_max = max(local_max, global_max)
         return global_max
+    
+#same method, but shorter codes
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        cur_max = global_max = nums[0]
+        for num in nums[1:]:
+            cur_max = max(cur_max+num, num)
+            global_max = max(cur_max, global_max)
+        return global_max
+        
