@@ -5,13 +5,15 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        water = 0
         leftHigh = [0]
         for i in range(1, len(height)):
-            leftHigh.append(max(leftHigh[i-1], height[i-1]))
+            leftHigh.append(max(height[i-1],leftHigh[i-1]))
         rightHigh = 0
+        water = 0
         for i in range(len(height)-2, -1, -1):
             rightHigh = max(rightHigh, height[i+1])
-            if min(leftHigh[i], rightHigh) > height[i]:
-                water += (min(leftHigh[i], rightHigh) - height[i])
-        return water
+            wall = min(rightHigh, leftHigh[i])
+            if height[i] < wall:
+                water += wall - height[i]
+        return water 
+            
