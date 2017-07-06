@@ -9,11 +9,11 @@ class Solution(object):
             return 1
         if n == 0:
             return 0
-        p1 = 1
-        p2 = 1
-        res = 0
+        prev1 = 1
+        prev2 = 1
+        total = 0
         for i in range(2,n+1):
-            res = p1 + p2
-            p2 = p1
-            p1 = res
-        return res
+            total = prev1 + prev2
+            prev2 = prev1
+            prev1 = total
+        return total
