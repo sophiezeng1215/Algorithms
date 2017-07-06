@@ -8,10 +8,10 @@ class Solution(object):
         """
         res = []
         nums.sort()
-        for i in range(len(nums)-1,-1,-1):     # start from the end
+        for i in range(len(nums)-1,-1,-1):     # start from the end to keep the max on the right when doinging append below
             if i==len(nums)-1 or nums[i] != nums[i+1]:   # to avoid duplication
-            subsets = self.twoSum(nums[:i], -nums[i])
-            for subset in subsets:
+                subsets = self.twoSum(nums[:i], -nums[i])
+                for subset in subsets:
                     subset.append(nums[i])
                     res.append(subset)
         return res
@@ -25,9 +25,9 @@ class Solution(object):
                 res.append([nums[i], nums[j]])
                 i += 1
                 j -= 1
-                while i < j and nums[i]==nums[i-1]:   
+                while i < j and nums[i]==nums[i-1]:   # to avoid duplication
                     i += 1
-                while j > i and nums[j]==nums[j+1]:
+                while j > i and nums[j]==nums[j+1]:   # to avoid duplication
                     j -= 1
             elif nums[i] + nums[j] < target:
                 i += 1;
